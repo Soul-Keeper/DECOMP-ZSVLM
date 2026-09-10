@@ -1,0 +1,59 @@
+{
+  "protocol": {
+    "n_measure": 300,
+    "n_warmup": 10,
+    "devices": {
+      "A100": "NVIDIA A100 80GB PCIe",
+      "4070S": "NVIDIA GeForce RTX 4070 SUPER"
+    }
+  },
+  "single_task": [
+    {"model": "VILT-B32-FINETUNED-VQA", "display": "ViLT-B/32", "strategy": "constrained",
+     "params": "117 M", "bbox": false, "vram_gb": 0.46,
+     "latency_ms": {"A100": 92.4, "4070S": 53.1}},
+
+    {"model": "BLIP-VQA-CAPFILT-LARGE", "display": "BLIP-VQA", "strategy": "label_only",
+     "params": "385 M", "bbox": false, "vram_gb": 0.77,
+     "latency_ms": {"A100": 152.3, "4070S": 169.1}},
+
+    {"model": "CLIP-VIT-L14", "display": "CLIP ViT-L/14", "strategy": "descriptive",
+     "params": "400 M", "bbox": false, "vram_gb": 0.82,
+     "latency_ms": {"A100": 99.5, "4070S": 81.7}},
+
+    {"model": "FLORENCE-2-LARGE", "display": "Florence-2-L", "strategy": "label_only",
+     "params": "823 M", "bbox": true, "vram_gb": 4.48,
+     "latency_ms": {"A100": 585.6, "4070S": 692.5}},
+
+    {"model": "PALIGEMMA", "display": "PaliGemma-3B", "strategy": "descriptive",
+     "params": "2.9 B", "bbox": true, "vram_gb": 5.61,
+     "latency_ms": {"A100": 498.7, "4070S": 640.9}},
+
+    {"model": "LLAVA-1.6-MISTRAL-7B", "display": "LLaVA-1.6-7B", "strategy": "descriptive",
+     "params": "7 B", "bbox": true, "vram_gb": 14.60,
+     "latency_ms": {"A100": 2929.6, "4070S": null}},
+
+    {"model": "QWEN2.5-VL-7B", "display": "Qwen2.5-VL-7B", "strategy": "descriptive",
+     "params": "7 B", "bbox": true, "vram_gb": 16.00,
+     "latency_ms": {"A100": 2297.4, "4070S": null}},
+
+    {"model": "QWEN3-VL-8B", "display": "Qwen3-VL-8B", "strategy": "descriptive",
+     "params": "8 B", "bbox": true, "vram_gb": 16.63,
+     "latency_ms": {"A100": 2375.4, "4070S": null}},
+
+    {"model": "INTERNVL2-8B", "display": "InternVL2-8B", "strategy": "descriptive",
+     "params": "8 B", "bbox": true, "vram_gb": 16.40,
+     "latency_ms": {"A100": 4078.1, "4070S": null}},
+
+    {"model": "MINICPM-LLAMA3-V-2.5", "display": "MiniCPM-V-2.5", "strategy": "descriptive",
+     "params": "8.5 B", "bbox": true, "vram_gb": 18.13,
+     "latency_ms": {"A100": 20436.7, "4070S": null}}
+  ],
+  "multi_task": [
+    {"model": "INTERNVL2-8B", "display": "InternVL2-8B",
+     "single_ms": 4078.1, "multi_ms": 755.4},
+    {"model": "MINICPM-LLAMA3-V-2.5", "display": "MiniCPM-V-2.5",
+     "single_ms": 20436.7, "multi_ms": 9291.0},
+    {"model": "QWEN2.5-VL-7B", "display": "Qwen2.5-VL-7B",
+     "single_ms": 2297.4, "multi_ms": 1384.4}
+  ]
+}

@@ -1,0 +1,12 @@
+# YOLO-World, used both as a localization reference and to produce the
+# region-of-interest boxes of the spatial ablation.
+# Conda env "vlm-det". Python 3.11.15
+#
+#   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu130
+#   pip install -r requirements/detectors.txt
+
+ultralytics==8.4.117
+opencv-python==5.0.0.93
+numpy==2.4.4
+pandas==3.0.5
+pillow==12.2.0

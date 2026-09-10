@@ -1,0 +1,18 @@
+# LLaVA-1.6, InternVL2, MiniCPM-V-2.5. These call model.chat(), an API that
+# later transformers releases removed, so they need their own environment.
+# Conda env "vlm-legacy-v2". Python 3.10.20
+#
+#   pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements/models-chat.txt
+#   pip install https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.0.4/flash_attn-2.7.3+cu121torch2.1-cp310-cp310-linux_x86_64.whl
+
+transformers==4.40.0
+tokenizers==0.19.1
+accelerate==1.14.0
+huggingface-hub==0.36.2
+safetensors==0.8.0
+timm==1.0.28
+sentencepiece==0.1.99
+einops==0.8.2
+numpy==1.26.4
+pillow==10.1.0

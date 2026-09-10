@@ -1,0 +1,5 @@
+display,strategy,type_adj,r_type,color_adj,r_color,iou_adj,r_det
+ResNet-50,fine-tuned,0.950,1.000,0.995,1.000,,
+ViT-B/16,fine-tuned,0.998,1.000,0.995,1.000,,
+YOLO11n-cls,fine-tuned,0.998,1.000,0.996,1.000,,
+YOLO11n-det,fine-tuned,,,,,0.995,1.000

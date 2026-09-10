@@ -1,5 +1,5 @@
-# Qwen3-VL only. Needs transformers 5.x, which the other model wrappers do not
-# tolerate. Conda env "vlm-qwen3". Python 3.11.15
+# Qwen3-VL only. Needs transformers 5.x, which the other model wrappers do not tolerate. 
+# Python 3.11.15
 #
 #   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu130
 #   pip install -r requirements/models-qwen3.txt

@@ -7,8 +7,8 @@ Conditions*.
 The production images contain personal data and are not released. Everything
 needed to recompute every table is here: the per-image predictions of all
 model-strategy combinations, the ground truth, the parser, the prompts and the
-profiling measurements. The external catalog evaluation can be reproduced end
-to end, since it runs on a public dataset.
+profiling measurements. The external catalog evaluation runs on a public
+dataset and can be reproduced end to end.
 
 ## Recomputing the tables
 
@@ -38,6 +38,28 @@ paper, the release is intact.
 Tables 1, 2, 3 and 10 describe the data, the model pool, the strategy grid and
 the normalization rules and contain no measurements.
 
+## Environments
+
+The libraries required by different models conflict, so each group has its own
+environment. Torch and flash-attention install lines are in the file headers.
+
+| File | Used for |
+|---|---|
+| `requirements/analysis.txt` | recomputing the tables, no models |
+| `requirements/models-core.txt` | ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL, Grounding DINO |
+| `requirements/models-chat.txt` | LLaVA-1.6, InternVL2, MiniCPM-V-2.5 |
+| `requirements/models-qwen3.txt` | Qwen3-VL |
+| `requirements/detectors.txt` | YOLO-World |
+
+flash-attention is optional; the wrappers fall back to eager attention, which
+changes latency but not the outputs. Prebuilt wheels for other CUDA and torch
+combinations: https://mjunya.com/flash-attention-prebuild-wheels/
+
+Greedy decoding makes inference deterministic within one environment: two runs
+of the same model, strategy and image set produced byte-identical outputs on a
+200-image verification subset. It does not hold across environments, where a
+library upgrade changed the output on 2.5% of that subset.
+
 ## Layout
 
 ```
@@ -53,6 +75,7 @@ metadata/
   polygon_assignment.json  frame -> camera position
   reference_points.csv  fine-tuned baselines, not recomputable without images
   profiling.json        latency and peak memory on both devices
+  manual_labels.json    manual type labels for the catalog
   catalog/              frozen definitions of the two external subsets
 src/
   parsing.py            normalization rules and label parser
@@ -69,7 +92,6 @@ src/
   prepare_catalog.py    builds the external subsets
   label_catalog.py      manual type annotation of catalog items
   measure_compute.py    latency and memory profiling
-manual_labels.json      manual type labels for the catalog
 requirements/
 ```
 
@@ -90,17 +112,18 @@ One JSON object per frame:
 }
 ```
 
-**`pred_*` is the run-time parse, without surface-form normalization.**
-Normalization is one of the three interventions the paper measures, so it runs
-afterwards rather than during inference: the reported metrics come from
-re-parsing `raw_*` through `src/parsing.py`. Comparing `pred_type` against
-`gt_type` directly gives the unnormalized column of Table 11, not the benchmark.
+In a deployment the parser and the normalization are one stage, and the paper
+puts normalization first in that pipeline. In the experiments the two are kept
+apart, because the contribution of normalization is itself one of the
+measurements: `run_benchmark` records the parse without it, and the reported
+metrics come from re-parsing `raw_*` through `src/parsing.py`, which applies it.
+Table 11 is the difference between the two.
 
-PaliGemma answers `t-shirt`, which the run-time parser rejects (`pred_type:
-null`); after normalization the same output parses as `tshirt`. Its type valid
-rate is therefore 0.223 in the stored fields and 1.000 in Table 4. The same
-applies to the metrics JSON written by `run_benchmark`, which carries a
-`"parser"` field saying so.
+So `pred_*` and `*_valid` are the parse **without** normalization. PaliGemma
+answers `t-shirt`, which is rejected there (`pred_type: null`) and accepted
+after normalization as `tshirt`; its type valid rate is 0.223 in the stored
+fields and 1.000 in Table 4. The metrics JSON written by `run_benchmark` carries
+a `"parser"` field saying the same.
 
 CLIP scores label embeddings instead of generating text, so `pred_*` is used
 directly for it and no parsing applies.
@@ -114,24 +137,29 @@ segments and the split assigns whole segments to folds. Three frames follow a
 different naming convention and are grouped as `unknown`, as in
 `src/dataset.py`.
 
-Metrics on the held-out fold:
+Distances to the supervised baselines are measured on the held-out fold:
 
 ```python
+import glob
 from src.loading import load, load_segments, load_split, fold_mask, subset
-from src.bootstrap import cluster_ci
+from src.bootstrap import cluster_ci, half_width
 
-data = load("predictions/main_benchmark/QWEN2.5-VL-7B_descriptive_predictions.jsonl",
-            segments=load_segments())
-fold = subset(data, fold_mask(data, load_split()))
-lo, hi = cluster_ci(fold["iou"], fold["segment"])
-print(f'{fold["iou"].mean():.3f} +- {(hi - lo) / 2:.3f}')
+segments, split = load_segments(), load_split()
+for path in sorted(glob.glob("predictions/main_benchmark/*_predictions.jsonl")):
+    data = load(path, segments=segments)
+    fold = subset(data, fold_mask(data, split))
+    cells = []
+    for key in ["correct_type", "correct_color", "iou"]:
+        lo, hi = cluster_ci(fold[key], fold["segment"])
+        cells.append(f'{fold[key].mean():.3f}+-{half_width(lo, hi):.3f}')
+    print(f'{fold["model"]:<24}{fold["strategy"]:<22}' + "  ".join(cells))
 ```
 
 ## Reproducing the external evaluation
 
-This part runs end to end on public data. Download the Fashion Product Images
-Dataset (the full release, not the thumbnails) and unpack it to
-`./fashion-dataset`.
+This part runs end to end on public data. Download the full release of the
+[Fashion Product Images Dataset](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset)
+(not the thumbnail version) and unpack it to `./fashion-dataset`.
 
 ```bash
 pip install -r requirements/models-core.txt
@@ -140,12 +168,12 @@ python -m src.prepare_catalog --src ./fashion-dataset --out ./data_ext
 
 By default this rebuilds the exact subsets of the paper from
 `metadata/catalog/*.csv`: 568 images at 284 per class for type, 1000 at 200 per
-class for color. Pass `--resample` to draw new ones, and `--dry-run` to see the
-class counts without writing anything.
+class for color. `--resample` draws new ones, `--dry-run` reports the class
+counts without writing.
 
-Then run the four strategies on each subset. Type metrics are read from the
-type subset and color metrics from the color subset; the secondary label in
-each is filled in formally and carries no meaning. The catalog has no boxes, so
+Then run the strategies on each subset. Type metrics are read from the type
+subset and color metrics from the color subset; the secondary label in each is
+filled in formally and carries no meaning. The catalog has no boxes, so
 detection is skipped.
 
 ```bash
@@ -168,67 +196,30 @@ foreach ($S in "descriptive","descriptive_cat","constrained","label_only") {
 }
 ```
 
-CLIP takes `contextual` in place of `constrained`. The manual type labels used
-to verify the catalog metadata are in `manual_labels.json`; agreement is 99.0%
-over all manual labels, and 98.9% over the 568 that ended up in the balanced
-subset.
+CLIP takes `contextual` in place of `constrained`. The manual type labels that
+verify the catalog metadata are in `metadata/manual_labels.json`; agreement is
+99.0% over all manual labels, and 98.9% over the 568 in the balanced subset.
 
-## Re-running the production benchmark
+## Protocol reference
 
-Requires the production images, which are not released. The commands are given
-so the protocol is unambiguous.
+These steps need the production images and cannot be run from this release.
+They are listed so the protocol is unambiguous.
 
 ```bash
 python -m src.run_benchmark --models QWEN2.5-VL-7B --data-dir ./data
 python -m src.run_benchmark --models INTERNVL2-8B --ablation
 python -m src.run_benchmark --models INTERNVL2-8B MINICPM-LLAMA3-V-2.5 --multitask
+python -m src.build_roi_sets --data-dir ./data --out-dir ./data_roi
+python -m src.measure_compute --gpu-label A100 --n-measure 300
 ```
 
 Without `--strategy`, the joint strategy of the model is used, the one reported
-throughout the paper.
-
-The spatial ablation needs the masked image sets:
-
-```bash
-pip install -r requirements/detectors.txt
-python -m src.build_roi_sets --data-dir ./data --out-dir ./data_roi
-```
-
-This writes `polygon/`, `pred_bbox/` and `gt_bbox/`, each the full 1280x720
-frame with everything outside the region blacked out, plus `coverage.json` with
-the surviving fraction of the annotated box per frame. Then run the benchmark
-on each directory with the model's joint strategy.
-
-## Environments
-
-The libraries required by different models conflict, so four environments are
-needed. Each file lists the versions used, and the header gives the torch and
-flash-attention install lines.
-
-| File | Models |
-|---|---|
-| `requirements/analysis.txt` | none, recomputing tables only |
-| `requirements/models-core.txt` | ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL, Grounding DINO |
-| `requirements/models-chat.txt` | LLaVA-1.6, InternVL2, MiniCPM-V-2.5 |
-| `requirements/models-qwen3.txt` | Qwen3-VL |
-| `requirements/detectors.txt` | YOLO-World |
-
-flash-attention is optional; the wrappers fall back to eager attention, which
-changes latency but not the outputs.
-
-Greedy decoding makes inference deterministic within one environment: two runs
-of the same model, strategy and image set produced byte-identical outputs on a
-200-image verification subset. It does not hold across environments, where a
-library upgrade changed the output on 2.5% of that subset.
-
-## Profiling
-
-`metadata/profiling.json` holds the measurements behind Tables 5 and 9. To
-re-measure:
-
-```bash
-python -m src.measure_compute --gpu-label A100 --n-measure 300
-```
+throughout the paper. `build_roi_sets` writes `polygon/`, `pred_bbox/` and
+`gt_bbox/`, each the full 1280x720 frame with everything outside the region
+blacked out, plus `coverage.json`; the benchmark is then run on each directory.
+`measure_compute` produced `metadata/profiling.json`, and can be pointed at
+`./data_ext` to check that it runs, though catalog images have different
+dimensions and the latencies are not comparable with the paper.
 
 ## Notes
 

@@ -1,6 +1,6 @@
 # LLaVA-1.6, InternVL2, MiniCPM-V-2.5. These call model.chat(), an API that
 # later transformers releases removed, so they need their own environment.
-# Conda env "vlm-legacy-v2". Python 3.10.20
+# Python 3.10.20
 #
 #   pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
 #   pip install -r requirements/models-chat.txt

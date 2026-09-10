@@ -1,11 +1,3 @@
-"""
-dataset.py — Garment dataset with group-aware splitting.
-
-FIXED: Split is now performed at the SEGMENT level, not the image level.
-All frames from one acquisition segment go to the same split.
-This prevents data leakage from near-duplicate frames.
-"""
-
 import json
 import logging
 import numpy as np

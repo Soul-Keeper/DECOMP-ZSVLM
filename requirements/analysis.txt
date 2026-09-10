@@ -1,11 +1,6 @@
 # Recomputing the tables from the released predictions. No models, no GPU.
-#   python -m src.build_metadata
-#   python -m src.compute_tables
 # Python 3.11
 
 numpy==2.4.4
 pandas==3.0.5
-
-# Table 7 only: rasterizes the working-area polygon. cv2.fillPoly counts pixel
-# coverage rather than pixel centres, so other rasterizers give different counts.
 opencv-python==5.0.0.93

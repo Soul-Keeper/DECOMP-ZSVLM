@@ -1,5 +1,5 @@
-# ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL, and the Grounding DINO
-# reference. Conda env "vlm-legacy". Python 3.11.15
+# ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL, and the Grounding DINO reference. 
+# Python 3.11.15
 #
 #   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu130
 #   pip install -r requirements/models-core.txt

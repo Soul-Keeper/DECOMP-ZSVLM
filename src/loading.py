@@ -5,7 +5,9 @@ from pathlib import Path
 
 import numpy as np
 
-from src.parsing import compute_iou, is_contrastive, parse_color, parse_type
+from src.parsing import (BBOX_GRID_1000, FREE_TEXT_BBOX_MODELS, JSON_BBOX_GRID_1000,
+                         JSON_BBOX_MODELS, bbox_text, compute_iou, is_contrastive,
+                         parse_bbox, parse_color, parse_json_bbox, parse_type)
 
 FILE_PATTERN = re.compile(
     r"^(?P<model>.+?)_"
@@ -52,7 +54,12 @@ def load(path, normalize=True, segments=None):
     contrastive = is_contrastive(records[0].get("model_name"))
     n = len(records)
 
-    pred_type, pred_color, iou = [], [], np.zeros(n)
+    model, strategy = match.group("model"), match.group("strategy")
+    free_text_bbox = model in FREE_TEXT_BBOX_MODELS
+    json_bbox = model in JSON_BBOX_MODELS
+    grid_1000 = (model, strategy) in BBOX_GRID_1000
+
+    pred_type, pred_color, iou, valid_det = [], [], np.zeros(n), np.zeros(n)
     for i, r in enumerate(records):
         if contrastive:
             pred_type.append(r.get("pred_type"))
@@ -60,8 +67,16 @@ def load(path, normalize=True, segments=None):
         else:
             pred_type.append(parse_type(r.get("raw_type") or r.get("raw_multitask"), normalize))
             pred_color.append(parse_color(r.get("raw_color") or r.get("raw_multitask"), normalize))
-        if r.get("detection_valid"):
-            iou[i] = compute_iou(r.get("pred_bbox_xyxy"), r.get("gt_bbox_xyxy"))
+        if free_text_bbox:
+            box = parse_bbox(bbox_text(r), grid_1000)
+        elif json_bbox:
+            box = parse_json_bbox(r.get("raw_detection") or r.get("raw_multitask"),
+                                  model in JSON_BBOX_GRID_1000)
+        else:
+            box = r.get("pred_bbox_xyxy") if r.get("detection_valid") else None
+        if box:
+            valid_det[i] = 1.0
+            iou[i] = compute_iou(box, r.get("gt_bbox_xyxy"))
 
     file_name = np.array([r["file_name"] for r in records])
     segment = None
@@ -75,8 +90,8 @@ def load(path, normalize=True, segments=None):
     pred_color = np.array([p or "" for p in pred_color])
 
     return {
-        "model": match.group("model"),
-        "strategy": match.group("strategy"),
+        "model": model,
+        "strategy": strategy,
         "n": n,
         "file_name": file_name,
         "segment": segment,
@@ -89,7 +104,7 @@ def load(path, normalize=True, segments=None):
         "iou": iou,
         "valid_type": (pred_type != "").astype(float),
         "valid_color": (pred_color != "").astype(float),
-        "valid_det": np.array([bool(r.get("detection_valid")) for r in records], dtype=float),
+        "valid_det": valid_det,
     }
 
 

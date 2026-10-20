@@ -35,7 +35,7 @@ MODELS = [
 DISPLAY = {m: d for m, d, _ in MODELS}
 
 ABLATION_MODELS = ["BLIP-VQA-CAPFILT-LARGE", "CLIP-VIT-L14", "LLAVA-1.6-MISTRAL-7B",
-                   "PALIGEMMA", "QWEN2.5-VL-7B"]
+                   "PALIGEMMA", "QWEN2.5-VL-7B", "QWEN3-VL-8B"]
 ABLATION_STRATEGY = {"BLIP-VQA-CAPFILT-LARGE": "label_only"}
 LEVELS = {"L1": "L1 full frame", "L2": "L2 polygon",
           "L3": "L3 predicted box", "L4": "L4 GT box"}
@@ -44,7 +44,7 @@ PROMPT_SHORT = {"constrained": "constr.", "label_only": "label",
                 "descriptive": "desc.", "question": "question",
                 "contextual": "context."}
 
-CATALOG_MODELS = ["CLIP-VIT-L14", "LLAVA-1.6-MISTRAL-7B", "PALIGEMMA", "QWEN2.5-VL-7B"]
+CATALOG_MODELS = ["CLIP-VIT-L14", "LLAVA-1.6-MISTRAL-7B", "PALIGEMMA", "QWEN2.5-VL-7B", "QWEN3-VL-8B"]
 CATALOG_EXTRA = {"CLIP-VIT-L14": "label_only"}
 
 

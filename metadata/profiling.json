@@ -44,9 +44,9 @@
      "params": "8 B", "bbox": true, "vram_gb": 16.40,
      "latency_ms": {"A100": 4078.1, "4070S": null}},
 
-    {"model": "MINICPM-LLAMA3-V-2.5", "display": "MiniCPM-V-2.5", "strategy": "descriptive",
-     "params": "8.5 B", "bbox": true, "vram_gb": 18.13,
-     "latency_ms": {"A100": 20436.7, "4070S": null}}
+    {"model": "MINICPM-LLAMA3-V-2.5", "display": "MiniCPM-V-2.5", "strategy": "constrained",
+     "params": "8.5 B", "bbox": true, "vram_gb": 18.04,
+     "latency_ms": {"A100": 17023.7, "4070S": null}}
   ],
   "multi_task": [
     {"model": "INTERNVL2-8B", "display": "InternVL2-8B",

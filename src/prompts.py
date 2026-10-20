@@ -275,7 +275,7 @@ MINICPM_PROMPTS: dict[str, PromptConfig] = {
     ),
 }
 
-MINICPM_DEFAULT = "descriptive"
+MINICPM_DEFAULT = "constrained"
 
 QWEN_PROMPTS: dict[str, PromptConfig] = {
     "label_only": PromptConfig(

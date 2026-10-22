@@ -1,0 +1,3014 @@
+{
+ "seed": 20261020,
+ "per_stratum": 50,
+ "population": {
+  "type/trivial": 28781,
+  "type/extracted": 30413,
+  "type/rejected": 31424,
+  "color/trivial": 39122,
+  "color/extracted": 28911,
+  "color/rejected": 22585
+ },
+ "items": [
+  {
+   "id": "a001",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "11M52S_1678191112_6_jpg.rf.7782ae33015a1f85f1c3ab013b5cc47e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment on the table?",
+   "response": "tan",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "tan"
+   }
+  },
+  {
+   "id": "a002",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "12M52S_1678187572_63_jpg.rf.2b12463bb4eb5bee7f19a786eaa141e8.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based solely on the image, the garment appears to be a type of casual or",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a003",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "14M40S_1678090480_17_jpg.rf.530a9fa208678415d4a9c022d7739bc2.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment on the table?",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a004",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "descriptive",
+   "file_name": "10M40S_1678083040_9_jpg.rf.6335386c073a2fb6c80c5aa837e60373.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed appears to be black. This can be determined by the visible portion of the garment that is not covered by the iron or",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a005",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "04M40S_1678104280_12_jpg.rf.eb87af0175b5b28431dd8ae804313374.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is on the table?",
+   "response": "apron",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "apron"
+   }
+  },
+  {
+   "id": "a006",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "16M49S_1678367809_22_jpg.rf.3f10c9f147e29189048ff63057c82172.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment being ironed in the image is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a007",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "constrained",
+   "file_name": "01M40S_1678089700_1_jpg.rf.70b938d81fa96ab2c420b04573c40fd3.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Reply with one word only.",
+   "response": "T shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a008",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "12M40S_1678104760_8_jpg.rf.e3df1f2661f3d2e6929ea4ac91b58d59.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment being handled is a **pair of pants**.\n\nHere's the reasoning:\n\n1.  **Shape and",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "pair of pants"
+   }
+  },
+  {
+   "id": "a009",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "06M40S_1678082800_9_jpg.rf.c5eb25e5c87ea45ba0d69e7292a75861.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What is the person working with, a tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a010",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "13M52S_1678187632_69_jpg.rf.5da726f87d6009ec7d3905d7c0eb8a02.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment is a **T-shirt**.\n\nHere's the reasoning:\n\n1.  **Shape and Structure:** The",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a011",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "09M40S_1678082980_11_jpg.rf.438ed189afa6b7a8df07f5859f36157d.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "</s><s>a tshirt or sweatshirt<loc_62><loc_374><loc_557><loc_996></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a012",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "11M52S_1678169512_10_jpg.rf.0993894a52f76d80dd752041c8677db3.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_1><loc_1><loc_533><loc_997></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a013",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "00M40S_1678089640_5_jpg.rf.d4e2452e0d64c1265c75247e39fe8399.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the picture is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a014",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "10M40S_1678086640_7_jpg.rf.99bfabf1824a783296b566a49767bddd.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person wearing a pink t-shirt. The garment appears to be a t-shirt rather than a sweatshirt, as it is a short-sleeved top and does not have the typical long sleeves and ribbed cuffs that are characteristic of a sweatshirt.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a015",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "10M52S_1678169452_18_jpg.rf.f4b012f90d697d4aa95a232af5877a06.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is on the table?",
+   "response": "cloth",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "cloth"
+   }
+  },
+  {
+   "id": "a016",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "07M49S_1678367269_19_jpg.rf.057062bcf735846a771dd26aea001747.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a black garment being ironed on a blue surface.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a017",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "03M40S_1678082620_26_jpg.rf.51304de08465d381ab3cdca1774bf029.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a018",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "05M40S_1678086340_25_jpg.rf.f663047d47a2e3bdb95d3a42f2817983.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is most likely a **sweatshirt**.\n\nHere's why:\n\n1.  **Material and Texture",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a019",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "01M40S_1678086100_7_jpg.rf.0be1f3fbc45ac9ff7a44fcc804adfc9b.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "Based on the image provided, it is not possible to definitively determine the color of the garment the woman is handling due to the resolution and angle of the photograph. The garment appears to be a dark color, but without a clearer view or additional context, it is not possible to specify whether it is black, brown, nude, white, or pink. To provide an accurate answer, a higher resolution image or additional information about the garment's color would be necessary.",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a020",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "01M40S_1678086100_21_jpg.rf.eee982d6ec7211f1b2f4638087d762f4.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "Based on the image provided, here is the color analysis:\n\n-   The person in the center is wearing a **pink** t-shirt.\n-   The pile",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a021",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "12M40S_1678090360_40_jpg.rf.537df9cac756b3c1760e11d4fdafc0fc.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The person in the image is wearing a t-shirt. It's a short-sleeved, crew-neck style of top, which is typical of a t-shirt.",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a022",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "07M52S_1678190872_42_jpg.rf.c89f6ad02ff7fe2eaad3f861b1d158e8.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the image alone, it is not possible to determine the exact type of",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a023",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "33M40S_1678080820_18_jpg.rf.90757f1670814662a7be3398546e01ae.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a variety of colors. Here are the colors identified in the image:\n\n- **Black**: There is a black object in the trash bin on the right side.\n- **Brown**: There is a brown object on the table in the middle.\n- **Nude**: There is a nude-colored table on the right side.\n- **White**: There is a white object on the table on the right side.\n- **Pink**: The person in the image is wearing a pink shirt.\n\nSo, the colors present in the image are black, brown, nude, white, and pink.",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a024",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "descriptive",
+   "file_name": "08M40S_1678090120_7_jpg.rf.ebd7ccf6fde184b2023e6020f2070246.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment? Choose exactly one: black, brown, nude, white, pink.",
+   "response": "The color of the garment is nude.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "label",
+    "value": "nude"
+   }
+  },
+  {
+   "id": "a025",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "14M52S_1678176892_32_jpg.rf.05adf1d41f9a0abfce17fa646a287588.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "</s><s><s>a tshirt or sweatshirt<loc_68><loc_416><loc_584><loc_758></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a026",
+   "model": "INTERNVL2-8B",
+   "strategy": "descriptive",
+   "file_name": "01M52S_1678176112_25_jpg.rf.e1cf9fcafa9a22b6f668ec7fb1dcda0d.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nA worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is white.",
+   "parser_label": "white",
+   "reading": {
+    "kind": "label",
+    "value": "white"
+   }
+  },
+  {
+   "id": "a027",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "08M52S_1678183732_46_jpg.rf.9c4efa3ef09339e90de2f8437795f5e7.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "</s><s><s><s>a tshirt or sweatshirt<loc_128><loc_416><loc_588><loc_694></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a028",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "descriptive",
+   "file_name": "13M40S_1678108420_20_jpg.rf.0f4fe4733d568b1f628d2a26c76bfb8e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed by the worker is brown. This can be determined by the visible portion of the garment that is not covered by the worker",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a029",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "descriptive",
+   "file_name": "03M40S_1678086220_37_jpg.rf.4544bdee4a2da028dc789b7464ec1fa5.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed by the worker is black. This can be determined by the visual evidence in the image, where the worker is holding a",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a030",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "09M52S_1678169392_52_jpg.rf.9b3a2077e07d3e719dde7c59dd954fca.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white, or pink<loc_661><loc_15><loc_893><loc_544></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a031",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "10M52S_1678169452_18_jpg.rf.f4b012f90d697d4aa95a232af5877a06.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white, or pink<loc_2><loc_418><loc_533><loc_996></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a032",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "09M52S_1678183792_59_jpg.rf.b5e2328f19ea0ed2f3cd8619d6503464.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The image shows a person holding a piece of clothing, which appears to be a white garment with a black tag or label on it. It looks like a shirt or a blouse, given the sleeves and the way it's being held. The garment is being displayed on a table, possibly in a",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a033",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "00M52S_1678190452_8_jpg.rf.56b980d4e85dd95869cfad2ce8198ace.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "Based on the image provided, the garment in question is a folded pile of clothing sitting on the wooden table to the right.\n\nThe color of this garment is a",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a034",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "04M49S_1678367089_14_jpg.rf.8e2c4e9b4a26427420790b22f27df4c9.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "</s><s><s><s>a tshirt or sweatshirt<loc_871><loc_140><loc_998><loc_561></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a035",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "01M52S_1678190512_63_jpg.rf.6b1b90ff79e77ec60e8d6e42bdee7c08.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image shows a person wearing a pink shirt. The shirt is pink, which is a shade of red.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a036",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "02M52S_1678186972_64_jpg.rf.02d575d21ed9824e00333252e71e8943.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt",
+   "response": "</s><s><s><s>sweatshirt or sweatshirt<loc_0><loc_178><loc_193><loc_426></s>",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a037",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "11M49S_1678367509_16_jpg.rf.75e4b9b5040542d79d16cd55f44035a5.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image shows a blue fabric, which is likely a garment or a piece of material being processed or prepared. The rest of the image is not clear enough to discern any other colors.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "blue"
+   }
+  },
+  {
+   "id": "a038",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "13M40S_1678108420_16_jpg.rf.b8edf8c7b8902301f9115539c9659c89.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a039",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "03M40S_1678089820_10_jpg.rf.b59b95a51f0240a82bcb18d106601250.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment laid out on the table is a **black long-sleeved top**.\n\nHere's a breakdown of",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "long-sleeved top"
+   }
+  },
+  {
+   "id": "a040",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "01M40S_1678089700_15_jpg.rf.23cb0dda8910b141da91abcb89b93c63.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "<image>\nWhat type of garment is this?",
+   "response": "The garment in the image appears to be a black dress or a formal blouse. It has a simple, elegant design with a straight neckline and a straight hem. The fabric looks smooth and possibly made of a lightweight material, suitable for formal or semi-formal wear. The person in the image is handling the garment, possibly preparing it for display or sale.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a041",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "07M40S_1678082860_15_jpg.rf.8c00fab295576d675ff6b8bebf829be9.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "Based on the image provided, the garment is a muted, earthy tone. It appears to be a shade of **brown** or **taupe**.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a042",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "03M40S_1678089820_31_jpg.rf.a3f868603489c047f817188f8b0c3bd7.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment in the image is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a043",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "44M40S_1678081480_43_jpg.rf.744859226ea7a34d508c049aa04cd85e.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_2><loc_1><loc_301><loc_400></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a044",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "04M52S_1678190692_34_jpg.rf.0659737ed986e26d9436eea08084fbe0.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garment being ironed is a t-shirt. This can be determined by the shape and style of the item, which includes a round neckline and short sleeves that are characteristic of a t-shirt. Sweatshirts typically have long sleeves and a hood, which are not present in the garment in the image. Additionally, the fabric appears to be a lighter weight, which is more common for t-shirts than sweatshirts.",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a045",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "09M52S_1678190992_52_jpg.rf.aae169818d500711fead962480926578.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment being ironed is a **t-shirt**.\n\nHere's the reasoning:\n\n1.  **Shape and",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a046",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "02M52S_1678190572_30_jpg.rf.43d32a77bddc6bac8ff060ea2e984b0d.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a047",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "01M52S_1678183312_14_jpg.rf.8ebd482eb1b5b6242e32275013e7c862.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is a **t-shirt**.\n\nHere's why:\n\n*   **Style:** The garment has a classic crew",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a048",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "05M52S_1678172752_15_jpg.rf.5c1aed716025470bf5d7e17224ceb85b.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image shows a person holding a black garment. There are no other colors visible in the image.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a049",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "07M40S_1678104460_46_jpg.rf.0dbb2426808d3b8521ef3fd89121ffe1.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "</s><s>2023/03/06 15:08:17\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a050",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "14M40S_1678104880_39_jpg.rf.d040eeccc60e291b189da945ea8d794e.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What is the color of the clothing? Choose from: black, brown, nude, white, pink.",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a051",
+   "model": "PALIGEMMA",
+   "strategy": "constrained",
+   "file_name": "10M40S_1678086640_21_jpg.rf.a64409aa7889a9a047ce7d5f97dabe8b.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a052",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "11M40S_1678090300_10_jpg.rf.1f5497cc046c3530e7d8b326e630af4b.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment on the table?",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a053",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "12M52S_1678180372_30_jpg.rf.b4623cc7b7e09554986b2a832437926f.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person wearing a pink top, which appears to be a t-shirt rather than a sweatshirt. Sweatshirts typically have a thicker fabric and a more relaxed fit, while t-shirts are generally thinner and have a more fitted or casual style. The person in the image",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a054",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "descriptive",
+   "file_name": "10M52S_1678187452_39_jpg.rf.8bc51366508fd03cc20ca677a77a78cd.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment? Choose exactly one: black, brown, nude, white, pink.",
+   "response": "The color of the garment is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a055",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "08M49S_1678367329_32_jpg.rf.eb835c7a65f225600f494b80e06e08cb.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment is a **black T-shirt**.\n\nHere's the reasoning:\n\n1.  **Shape and Neckline",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a056",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "10M40S_1678090240_13_jpg.rf.4ce9f873e8a70cbc39ee9d555e28306d.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The garment in question is pink. This can be determined by observing the color of the fabric as it is held up by the person in the image. The color is distinct and can be identified as pink, which is one of the options provided in the question. It is important to note that color identification can be subjective and may vary slightly depending on the lighting and the specific shades present in the image. However, based on the visible information, the garment is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a057",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "00M52S_1678186852_27_jpg.rf.2ae71f324adaf05ab128ed96e66e9784.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based solely on the image, the garment being ironed appears to be a light",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a058",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "label_only",
+   "file_name": "09M49S_1678367389_8_jpg.rf.10c389498fe1fa3d0c03296b57a54773.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a059",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "03M40S_1678082620_21_jpg.rf.45b348fde95ccef51aad53714b8d67ec.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garments in the image appear to be sweatshirts rather than t-shirts. This determination can be made based on several visual cues: the thickness and texture of the fabric suggest a material commonly used for sweatshirts, which are designed to be warmer and more insulating than t-shirts. Additionally, the way the fabric drapes and the presence of what seems to be a ribbed cuff on the sleeve are characteristic of sweatshirt design. Sweatshirts typically have a more substantial build and are often made from materials that provide warmth, such as fleece or cotton blends, which aligns with the appearance of the garments in the image.",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a060",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "07M40S_1678082860_17_jpg.rf.d6add7708c973931967147aa98c8a963.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The fabric in the image appears to be pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a061",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "09M52S_1678169392_2_jpg.rf.d4bbd980a7bc32024facd9a5c8c62af5.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a062",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678172632_1_jpg.rf.37bdef7abeb03dd11415a097f4d54342.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is most likely a **t-shirt**.\n\nHere's why:\n\n1.  **Neckline:** The",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a063",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "06M40S_1678082800_23_jpg.rf.4530ebce041b329ace0139a1e7327a81.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a064",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "07M40S_1678082860_47_jpg.rf.7791980ec5bba66c28fce7066d4890d7.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a065",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "05M40S_1678082740_3_jpg.rf.f934249c28d2d15fa0c0a07028bde246.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "The garment in the image is purple.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a066",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "06M52S_1678187212_57_jpg.rf.5d46f54b22921a263c3ee314d11b594d.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The shirt in the picture is beige, which is a shade of light brown.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "beige"
+   }
+  },
+  {
+   "id": "a067",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "00M52S_1678172452_25_jpg.rf.d471a5c2b6e20be55e7299d3823a85fd.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a068",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "06M49S_1678367209_22_jpg.rf.c2e7835731997ca9c329c5c1465db521.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white or pink<loc_394><loc_1><loc_720><loc_545></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a069",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "10M52S_1678169452_36_jpg.rf.e6f9978d508c684d743bed8daf022191.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person ironing a pink garment, which appears to be a sweatshirt or a long-sleeved top. The fabric looks thicker than that of a typical t-shirt, suggesting it's designed for warmth and is likely intended for cooler weather.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a070",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "06M49S_1678367209_31_jpg.rf.a224326359309d688a2d3894e1261828.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a071",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "06M40S_1678104400_54_jpg.rf.1fe286c8465ba88a1a3c6cd6347cfaf9.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The garment in the picture appears to be a long-sleeved, pullover-style top or sweater. It has a loose fit and seems to be made of",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "long-sleeved top"
+   }
+  },
+  {
+   "id": "a072",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "31M52S_1678185112_32_jpg.rf.81b25fe82383bb6e2ced3ec77b01bd72.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the image is beige.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "beige"
+   }
+  },
+  {
+   "id": "a073",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "08M49S_1678367329_16_jpg.rf.fe18831afcece9b2b82ff3f3d4033ce7.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_374><loc_0><loc_732><loc_322></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a074",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "12M40S_1678083160_15_jpg.rf.844151e7e58dfeee48d274888b69b4d9.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image shows a person wearing a pink shirt. The clothing on the table appears to be black, and there are also brown and white items visible.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a075",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "13M52S_1678166032_40_jpg.rf.2cb475b35ad203f656d7f9ceb6a9ce94.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "</s><s>2023/03/07 08:14:37\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a076",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "03M52S_1678169032_2_jpg.rf.65ae070093a73ea8082d68b3324b0100.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a077",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "descriptive",
+   "file_name": "04M52S_1678190692_18_jpg.rf.f209502d668c24f6001c990141b4eda7.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment? Choose exactly one: black, brown, nude, white, pink.",
+   "response": "The color of the garment is nude.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "label",
+    "value": "nude"
+   }
+  },
+  {
+   "id": "a078",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "12M52S_1678180372_19_jpg.rf.902bf890d9b3b6b0d87f2a75a50bb489.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person wearing a pink t-shirt.",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a079",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "13M40S_1678086820_22_jpg.rf.dbd064291f699a8a3d2c7ef3f65a0766.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "Based on the image provided, here is a breakdown of the colors present:\n\n-   **Black**: This is clearly visible. There is a large stack of folded",
+   "parser_label": "black",
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a080",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "label_only",
+   "file_name": "06M40S_1678086400_7_jpg.rf.f2f53ea3008409f92195349a3beb9d14.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a081",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "02M52S_1678186972_6_jpg.rf.3419e4b33a02b50910de5942fe3f7e27.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a082",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "04M40S_1678082680_17_jpg.rf.93ca703527827b806490bd991af69b67.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a083",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "13M52S_1678169632_36_jpg.rf.648a191d170a419d3c5e92799e75b4eb.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What is the person working with, a tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a084",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "06M52S_1678190812_42_jpg.rf.3c7099679a35df83a2981de103e7d5fb.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt",
+   "response": "</s><s><s><s>sweatshirt or sweatshirt<loc_1><loc_201><loc_243><loc_429></s>",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a085",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "09M40S_1678104580_15_jpg.rf.8e2aeef57cfffbd3a01007bb1e020043.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "The color of the garment being ironed by the person in the image is a",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a086",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "05M52S_1678187152_23_jpg.rf.2e131c50862d0c0c6367fa706aa94478.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What is the person working with, a tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a087",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "13M40S_1678108420_20_jpg.rf.0f4fe4733d568b1f628d2a26c76bfb8e.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with exactly one word.",
+   "response": "T-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a088",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "34M49S_1678368889_18_jpg.rf.43a277e88c3c05d4665f7ae5b93a728a.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The question pertains to the color of the garment being ironed. Based on the image provided, the garment is black. There is no indication of the garment being any other color such as brown, nude, white, or pink. Therefore, the answer to the question is black.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a089",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "constrained",
+   "file_name": "00M52S_1678183252_1_jpg.rf.dbe3c6bfc5063a9ddf52a99c158b236b.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a090",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "constrained",
+   "file_name": "11M52S_1678191112_11_jpg.rf.9325776f0d754dc7ae50a23848b4cdb7.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a091",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "15M40S_1678104940_58_jpg.rf.d25ae6fc8567f49d6584ec19fc1f62bb.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is this clothing?",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a092",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "07M52S_1678169272_47_jpg.rf.30837ff460b6a36e0e0758505b8f9807.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white or pink<loc_2><loc_389><loc_607><loc_802></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a093",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "11M52S_1678169512_33_jpg.rf.b37da854fd0ae9e203209f17ca7f878e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a person ironing a pink garment. The color of the garment being ironed is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a094",
+   "model": "INTERNVL2-8B",
+   "strategy": "descriptive",
+   "file_name": "04M49S_1678367089_23_jpg.rf.5a5ce33fd0f4eb52a1109bdbb1fe5fcc.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nA worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The garment being ironed is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a095",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "12M52S_1678169572_3_jpg.rf.c7efc3d30cd546f019e8bd4b654b8ae3.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based solely on the image, the garment being ironed appears to be a piece",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a096",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "14M40S_1678083280_15_jpg.rf.89e21dec7ca31abe8d42790eb259afd7.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a person in a pink shirt. The objects on the table and the chair include black, brown, and nude-colored items.",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a097",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "06M40S_1678104400_33_jpg.rf.1c4129911d62a43bfebc639ef968cfef.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The image shows a person folding a garment on a table. The garment appears to be a pair of pants, possibly made of a lightweight fabric, given its drape and the way it's being handled. The color of the pants is a muted purple or lavender.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "pants"
+   }
+  },
+  {
+   "id": "a098",
+   "model": "PALIGEMMA",
+   "strategy": "descriptive",
+   "file_name": "02M40S_1678086160_11_jpg.rf.5e41f55b4e906f7ab3a0b912851907d1.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a099",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "descriptive",
+   "file_name": "10M40S_1678090240_18_jpg.rf.79d14b235d27295e1ba8717024e314a3.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment? Choose exactly one: black, brown, nude, white, pink.",
+   "response": "The color of the garment is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a100",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "08M40S_1678104520_5_jpg.rf.0222c0de9cfec1ea3023c66ad2b1ea5e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the picture is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a101",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "04M40S_1678104280_1_jpg.rf.9a745f86f17ee3739f40f0de64e11c42.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "The color of the garment is a shade of purple.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a102",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678172632_39_jpg.rf.3115151dca11246f72ba2c463c7cec53.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a103",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "02M40S_1678089760_29_jpg.rf.0c6c17936a94697b32a44a86af775c2c.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is on the table?",
+   "response": "umbrella",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "umbrella"
+   }
+  },
+  {
+   "id": "a104",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "08M52S_1678190932_23_jpg.rf.83960a3181aa0d8422745ea3e3b04ed7.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the image alone, it is not possible to determine the exact type of",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a105",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "01M52S_1678190512_0_jpg.rf.4bef259e5445405a5fd8540afd824c6c.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a106",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "07M40S_1678082860_48_jpg.rf.b639fa87b726531f871241ee59f0d28b.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The image shows a person ironing a garment, which appears to be a long-sleeved shirt or a dress. The garment is being ironed on a flat surface, likely a table or ironing board, and the person is using an iron to smooth out wrinkles and creases.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "long-sleeved shirt"
+   }
+  },
+  {
+   "id": "a107",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "11M40S_1678090300_36_jpg.rf.cadaa0b70e614e104f593ee4a347e282.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garment in the image appears to be a sweatshirt. This can be inferred from the visible ribbed cuffs on the sleeves, which are characteristic of sweatsh",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a108",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "03M52S_1678169032_0_jpg.rf.c7cb38c44548b63cd2818fdb3cf9ab52.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the picture is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a109",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "00M40S_1678086040_17_jpg.rf.1cf16fb37abad76724362c901c1728d9.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a110",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "label_only",
+   "file_name": "11M40S_1678083100_7_jpg.rf.79aea0871e113d8fa2b0487a50263b2f.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a111",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "00M52S_1678186852_31_jpg.rf.707c1d8199ec4d94fd7a9969d0a17c7e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment in the image is beige.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "beige"
+   }
+  },
+  {
+   "id": "a112",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "constrained",
+   "file_name": "01M52S_1678186912_61_jpg.rf.7ce7acbc109092018db3c0b85c6aee52.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is this clothing black, brown, nude, white or pink?",
+   "response": "neither",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a113",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "05M52S_1678183552_44_jpg.rf.af77356e2f3e365b0f9e1aa88d493933.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The garment on the ironing board is white in color. This can be determined by the visual information provided in the image, where the garment contrasts with the green surface of the ironing board and the pink shirt of the person ironing. There is no ambiguity in the color of the garment as it is clearly visible and distinguishable from the other colors present in the image.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "white"
+   }
+  },
+  {
+   "id": "a114",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "constrained",
+   "file_name": "14M52S_1678184092_27_jpg.rf.b4618ecec9694f988a31b7ee67d6a961.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Reply with one word only.",
+   "response": "T shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a115",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678187032_14_jpg.rf.9ba3a4510c7338a31daa94754f0269da.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visible characteristics of the garment being ironed, it appears to be a t-shirt rather than a sweatshirt. T-shirts typically have a smoother texture and a more fitted silhouette compared to sweatshirts, which often have a thicker, more textured fabric and a looser fit. The garment in the image has a lighter color and seems to be made of a thinner material, which is more consistent with the properties of a t-shirt. However, without a clear view of the entire garment and additional context, it is not possible to definitively determine whether it is a t-shirt or a sweatshirt.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a116",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "09M52S_1678190992_28_jpg.rf.8dda72475d5fa0d813cce63afeecd752.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "</s><s>2023/03/07 15:10:12\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a117",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "12M52S_1678183972_6_jpg.rf.7c704ea8e8ca44194f732792c4792f56.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_236><loc_0><loc_582><loc_551></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a118",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "02M52S_1678190572_33_jpg.rf.c6178c25882f50665ba2c2eec1ebce1d.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with exactly one word.",
+   "response": "T-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a119",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "13M40S_1678090420_3_jpg.rf.71d68bf5be6cec033e5852ecca0a68a1.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a person ironing a brown fabric. There are also other fabrics visible in the background, including black, nude, and pink.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a120",
+   "model": "INTERNVL2-8B",
+   "strategy": "descriptive",
+   "file_name": "09M52S_1678169392_0_jpg.rf.07fffe6e51d152e7952851e4b8b9e24c.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nA worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a121",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "12M52S_1678183972_15_jpg.rf.70fd4e23b0dfa8f33d9b956a83ebf1f7.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "</s><s>2023/03/07 13:13:49\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a122",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678172632_39_jpg.rf.3115151dca11246f72ba2c463c7cec53.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person wearing a pink shirt, and there are clothing items on a table that appear to be sweatshirts. The sweatshirts have long sleeves and a crew neck, which is typical for sweatshirts.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a123",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "34M49S_1678368889_6_jpg.rf.cac89f1585ac7959890a90db2ab3f2a4.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the image, the garment being ironed appears to be a long-sleeved shirt, which could be either a t-shirt or a sweatshirt. The exact type of garment cannot be definitively determined from the image alone without additional context or a clearer view of the garment's specific features, such as the presence of a hood for a sweatshirt or the style of the sleeves for a t-shirt.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "long-sleeved shirt"
+   }
+  },
+  {
+   "id": "a124",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "13M40S_1678108420_39_jpg.rf.b71fba3f78df20de6b7afa3426bf2bb1.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a125",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "02M40S_1678086160_34_jpg.rf.d2d9297744375401a77564f7795cae3e.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The garment being held by the person in the image is black. There are no other garments visible in the image to determine their colors. Therefore, based on the visible information, the color of the garment in question is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a126",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "13M40S_1678108420_12_jpg.rf.696ed1873064406a8c9eb863b44e371e.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What is the color of the clothing? Choose from: black, brown, nude, white, pink.",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a127",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "12M52S_1678191172_2_jpg.rf.1f63ba207fae2d9c8604b4a83354a1e6.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is a **t-shirt**.\n\nHere's why:\n\n1.  **Style and Cut:** The garment has",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a128",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "07M40S_1678086460_11_jpg.rf.00192d12e43c622a5274b36f1ce25154.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the picture is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a129",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "01M52S_1678172512_46_jpg.rf.d2f3555e63aff2215e10a18c1fc7f87b.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What is the color of the clothing? Choose from: black, brown, nude, white, pink.",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a130",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "16M40S_1678083400_18_jpg.rf.ae6c0311f55c33e2fe062ff939630990.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The person in the image is wearing a pink shirt and holding a black piece of clothing. There are also some brown and nude-colored items on the table to the",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a131",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "08M49S_1678367329_20_jpg.rf.a908298eb7c8dfe3d68a9b8a82f8b4c9.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image shows a person working in what appears to be an ironing area. The person is wearing black pants and a black shirt. There is a blue iron",
+   "parser_label": "black",
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a132",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "10M52S_1678187452_38_jpg.rf.36ed668a93e8c23f2489b31eed354f40.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt",
+   "response": "</s><s><s><s>sweatshirt or sweatshirt<loc_52><loc_411><loc_643><loc_764></s>",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a133",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "06M40S_1678104400_3_jpg.rf.627c5a8fe89d5ed74466366b2782c323.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "Based on the image provided, here is an analysis of the colors present:\n\n-   **Black**: There are no prominent black items in the scene. While there",
+   "parser_label": "black",
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a134",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "15M52S_1678187752_33_jpg.rf.0cf676905200ea188910560421ea5ccf.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "The garment in the picture is beige or light brown in color.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "beige"
+   }
+  },
+  {
+   "id": "a135",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "16M49S_1678367809_9_jpg.rf.0aba126f2b0867b589d637f6e81696e5.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a136",
+   "model": "PALIGEMMA",
+   "strategy": "constrained",
+   "file_name": "14M40S_1678108480_28_jpg.rf.d14229f895b46b89730adde9a179cdf4.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a137",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "09M40S_1678086580_3_jpg.rf.2f9de83e8739f1f2b7d78da67cb7fd99.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The garment in the picture appears to be a pair of black shorts. The person is folding them, which suggests they are being prepared for storage or sale. The",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shorts"
+   }
+  },
+  {
+   "id": "a138",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "02M52S_1678183372_36_jpg.rf.f4e10366a36f92fd3e199847191fcdf0.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "The garment in the picture appears to be a white shirt. It has short sleeves and a collar, which are typical features of a standard shirt. The person is",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a139",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "12M52S_1678180372_6_jpg.rf.20d7133ad58145569374c6f865c86db0.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment being ironed is a **white polo shirt**.\n\nHere's the reasoning:\n\n1.  **Coll",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "polo"
+   }
+  },
+  {
+   "id": "a140",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "09M52S_1678169392_0_jpg.rf.07fffe6e51d152e7952851e4b8b9e24c.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The image shows a person ironing a pink fabric, which appears to be a sweatshirt. The fabric is being pressed with an iron, and the person is using a blue handle iron, which is commonly used for ironing sweatshirts and other thicker fabrics.",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a141",
+   "model": "PALIGEMMA",
+   "strategy": "question",
+   "file_name": "03M52S_1678187032_14_jpg.rf.9ba3a4510c7338a31daa94754f0269da.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a142",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "00M52S_1678168852_8_jpg.rf.3a2c68f478e095c35f4b005ec8656972.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment in the image is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a143",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "descriptive",
+   "file_name": "04M40S_1678104280_44_jpg.rf.3ec5f7ad5dfcd7bb464f395c1c61ceec.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment? Choose exactly one: black, brown, nude, white, pink.",
+   "response": "The color of the garment is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a144",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "08M52S_1678169332_47_jpg.rf.aab03b66c1377383441f811a5c5a72ec.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white, or pink<loc_15><loc_359><loc_468><loc_996></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a145",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "13M40S_1678108420_39_jpg.rf.b71fba3f78df20de6b7afa3426bf2bb1.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based solely on the image, the garment appears to be a piece of casual or",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a146",
+   "model": "PALIGEMMA",
+   "strategy": "descriptive",
+   "file_name": "13M52S_1678166032_8_jpg.rf.a4d4e4cae6faee2d09af6544fac2b299.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a147",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "07M40S_1678090060_15_jpg.rf.117cda1e6805c590b38b8ff6e95c23a8.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garment in the image appears to be a sweatshirt. This can be inferred from the visible ribbed cuffs and hem, which are characteristic features of sweatsh",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a148",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "32M40S_1678105960_65_jpg.rf.7c036de238a1b3dd33693e739c49bde4.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with exactly one word.",
+   "response": "T-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a149",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "03M40S_1678086220_24_jpg.rf.59f5d96bde1bb0a3baff8011a97a70aa.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "</s><s><s>a tshirt or sweatshirt<loc_89><loc_2><loc_340><loc_610></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a150",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "label_only",
+   "file_name": "06M40S_1678104400_50_jpg.rf.c7a5eb8e1ac3013936202381fd34518b.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a151",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "00M52S_1678168852_6_jpg.rf.7aad7fb9baa6d60951982438cd704103.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_283><loc_0><loc_537><loc_430></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a152",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "04M40S_1678082680_14_jpg.rf.abab076f827b5558b6f5938f031ba125.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the image alone, it is challenging to definitively determine whether the garment is a t-shirt or a sweatshirt. Both types of clothing can be similar in appearance, especially when folded. However, sweatshirts typically have long sleeves and are often made of a thicker, more insulating material compared to t-shirts. Without a clear view of the sleeves or additional context, such as the thickness of the fabric, it is not possible to provide a conclusive answer. To accurately determine whether the garment is a t-shirt or a sweatshirt, one would need more information or a clearer view of the garment's features.",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a153",
+   "model": "PALIGEMMA",
+   "strategy": "constrained",
+   "file_name": "14M40S_1678086880_17_jpg.rf.f13e93ff8af5aa202c28e0bda72fb615.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a154",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "12M52S_1678191172_5_jpg.rf.e877500a9021e3895c9201a295375233.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment in the image is beige.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "beige"
+   }
+  },
+  {
+   "id": "a155",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "label_only",
+   "file_name": "04M52S_1678172692_55_jpg.rf.658a3bd8ebb450e3f9165486cfeb35b8.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "tshirt or sweatshirt?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a156",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "06M40S_1678082800_20_jpg.rf.0416151f606ce744b42f167220a9a8ff.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "The garment in the image is gray.",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "gray"
+   }
+  },
+  {
+   "id": "a157",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "04M49S_1678367089_14_jpg.rf.8e2c4e9b4a26427420790b22f27df4c9.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is this clothing?",
+   "response": "blue",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "blue"
+   }
+  },
+  {
+   "id": "a158",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "45M52S_1678171552_9_jpg.rf.e4f64db386ba5f05e7c744c3695b3f58.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garment in the image appears to be a sweatshirt. This can be inferred from the visible design and structure, which includes a hood (partially visible at",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a159",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "descriptive",
+   "file_name": "06M40S_1678104400_52_jpg.rf.81546b07790294b8cb6c9326a10a74a4.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown. This can be determined by observing the visible parts of the garment that are not covered by the iron or the",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a160",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "33M40S_1678088020_2_jpg.rf.111ccbfb327590177962c1ae94fa86b1.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is most likely a **sweatshirt**.\n\nHere's why:\n\n1.  **Material and Texture",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a161",
+   "model": "PALIGEMMA",
+   "strategy": "descriptive",
+   "file_name": "02M40S_1678082560_6_jpg.rf.03e2248c0106a9022ef833d142ae4259.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a162",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "14M40S_1678104880_11_jpg.rf.df885298c8005f8ee3f23da7d805428f.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a163",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "03M40S_1678082620_21_jpg.rf.45b348fde95ccef51aad53714b8d67ec.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "Based on the visual evidence in the image, the garment being ironed is a **long-sleeved top**, likely a **sweatshirt or a",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a164",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "constrained",
+   "file_name": "10M52S_1678191052_2_jpg.rf.6e633116bb5abb660ec859bbbc48ed1b.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "Is this a tshirt or sweatshirt?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a165",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678176232_45_jpg.rf.d94f730222e4eea102c503eaf46bc577.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The question appears to be asking for the color of the shirt the person is handling. Based on the image, the shirt is white. Therefore, the answer to the question is \"white.\"",
+   "parser_label": "white",
+   "reading": {
+    "kind": "label",
+    "value": "white"
+   }
+  },
+  {
+   "id": "a166",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "question",
+   "file_name": "10M40S_1678086640_3_jpg.rf.11b8e7602582cb8d34a6836d655d98a2.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The garment in the image is black.",
+   "parser_label": "black",
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a167",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "label_only",
+   "file_name": "04M52S_1678172692_55_jpg.rf.658a3bd8ebb450e3f9165486cfeb35b8.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The image contains items in various colors. Specifically, there is a black garment on the ironing board and a stack of brown garments on the table. Additionally, there is a pink garment on the table. Therefore, the colors present in the image are black, brown, and pink.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "black"
+   }
+  },
+  {
+   "id": "a168",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "constrained",
+   "file_name": "33M40S_1678080820_6_jpg.rf.75710bf29953cb35fe7b548b9df36ee9.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What is the color of the clothing? Choose from: black, brown, nude, white, pink.",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a169",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "descriptive",
+   "file_name": "11M40S_1678090300_19_jpg.rf.32359cda53b6f759d66d441bc7319fe2.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a170",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "03M52S_1678176232_23_jpg.rf.7dd800cd2773f03f934c810668798fb5.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "<image>\ntshirt or sweatshirt?",
+   "response": "The image shows a white, short-sleeved t-shirt laid out on a table. The t-shirt appears to be a standard crew neck style, which is commonly associated with t-shirts rather than sweatshirts. Sweatshirts typically have longer sleeves and are made from thicker, more insulating materials. The t-shirt in the image is more consistent with the characteristics of a t-shirt.",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a171",
+   "model": "INTERNVL2-8B",
+   "strategy": "descriptive",
+   "file_name": "10M40S_1678104640_14_jpg.rf.2bedd4d7d92a245f6f4bb54eb7604d21.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nA worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a172",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "label_only",
+   "file_name": "44M40S_1678081480_40_jpg.rf.492d97bc4d4abf6af861a9796facf9ea.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "t shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a173",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "00M52S_1678190452_56_jpg.rf.1a9dd133fa645a56b07c58a6fc357483.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "</s><s>2023/03/07 15:01:32\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a174",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "08M40S_1678090120_36_jpg.rf.76098277d576377b90736db7ef59e05a.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is this clothing?",
+   "response": "purple",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "purple"
+   }
+  },
+  {
+   "id": "a175",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "07M52S_1678187272_55_jpg.rf.0cbb52dfee86f522236c17571f41d0d5.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment on the table?",
+   "response": "tan",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "tan"
+   }
+  },
+  {
+   "id": "a176",
+   "model": "PALIGEMMA",
+   "strategy": "descriptive",
+   "file_name": "07M52S_1678187272_51_jpg.rf.6be71c193d5e09e3934f07640ba35976.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "A worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What type of garment is being ironed, a tshirt or sweatshirt? Answer with one word.",
+   "response": "t-shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a177",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "13M52S_1678166032_10_jpg.rf.28bed54df68d492d6250273ed4bbd427.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The image shows a stack of garments in various colors. The colors visible in the image are:\n\n- Black\n- Brown\n- Nude\n- White\n- Pink\n\nThese colors are evident in the garments displayed on the tables in the image.",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a178",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "01M52S_1678186912_54_jpg.rf.019a2c9ecd559c367fcdb05aed27ecc6.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "</s><s>2023/03/07 14:01:55\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a179",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "label_only",
+   "file_name": "09M52S_1678183792_37_jpg.rf.3d872c7f75ca4590324613f932491170.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "black, brown, nude, white or pink?",
+   "response": "The person in the image is wearing a pink shirt.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a180",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "14M52S_1678169692_25_jpg.rf.532cfb47e08bb4b022adafd5dd9bdb5d.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The color of the garment is pink.",
+   "parser_label": "pink",
+   "reading": {
+    "kind": "label",
+    "value": "pink"
+   }
+  },
+  {
+   "id": "a181",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "label_only",
+   "file_name": "10M52S_1678187452_23_jpg.rf.59bcda387734069ae4727ed41cb7d12f.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "The garment being ironed in the image appears to be a t-shirt. The shape and design, along with the way it is folded and the context of the",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a182",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "32M40S_1678087960_14_jpg.rf.59d311fee94e5c89800a782cade2edec.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a183",
+   "model": "QWEN3-VL-8B",
+   "strategy": "label_only",
+   "file_name": "13M40S_1678108420_37_jpg.rf.b5b41dacddecec9abdb744e892d14650.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "tshirt or sweatshirt?",
+   "response": "Based on the visual evidence in the image, this is most likely a **sweatshirt**.\n\nHere's why:\n\n1.  **Material and Texture",
+   "parser_label": "sweatshirt",
+   "reading": {
+    "kind": "label",
+    "value": "sweatshirt"
+   }
+  },
+  {
+   "id": "a184",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "question",
+   "file_name": "13M52S_1678187632_53_jpg.rf.d5f1f94bfd83f94eb4f05f3e0f63c2b0.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of clothing is this?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a185",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "00M49S_1678366849_25_jpg.rf.82b5df896ab2b2173d80755de8c6e65d.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white, or pink<loc_440><loc_0><loc_745><loc_306></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a186",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "constrained",
+   "file_name": "00M52S_1678190452_55_jpg.rf.0797a0be371246981ac2975cad733aa9.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "Is the color black, brown, nude, white or pink?",
+   "response": "</s><s><s><s>the color black, brown, nude, white, or pink<loc_96><loc_412><loc_538><loc_769></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a187",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "06M52S_1678190812_51_jpg.rf.db363a5cab143e913ce5d2a66b4ef1f2.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The color of the garment being ironed is a light beige or khaki.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "khaki"
+   }
+  },
+  {
+   "id": "a188",
+   "model": "INTERNVL2-8B",
+   "strategy": "label_only",
+   "file_name": "09M52S_1678190992_43_jpg.rf.19bbbd70bb7300433963c7276a33609b.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nblack, brown, nude, white or pink?",
+   "response": "The color of the item in the image is nude.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "label",
+    "value": "nude"
+   }
+  },
+  {
+   "id": "a189",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "label_only",
+   "file_name": "14M40S_1678083280_12_jpg.rf.6db3a30fc266488e552e248466a09815.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black brown nude white pink",
+   "response": "</s><s><s><s>nude white pink<loc_78><loc_1><loc_444><loc_731></s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a190",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "10M52S_1678187452_32_jpg.rf.3f614b5ee1dfb4f77ccf29f274582763.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "What color is the garment?",
+   "response": "The color of the garment is a light beige or tan.",
+   "parser_label": "nude",
+   "reading": {
+    "kind": "word",
+    "value": "tan"
+   }
+  },
+  {
+   "id": "a191",
+   "model": "QWEN2.5-VL-7B",
+   "strategy": "question",
+   "file_name": "01M52S_1678176112_17_jpg.rf.57d7dc5953808cf4c78850e73f1481e0.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "What type of garment is this?",
+   "response": "The garment in the picture appears to be a white t-shirt. It is being held up, likely for inspection or folding, and there are other folded t-shirts",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a192",
+   "model": "FLORENCE-2-LARGE",
+   "strategy": "question",
+   "file_name": "00M40S_1678086040_27_jpg.rf.0078acd64faf9f390e42461834b2087e.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "</s><s>2023/03/06 10:01:02\n</s>",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a193",
+   "model": "MINICPM-LLAMA3-V-2.5",
+   "strategy": "question",
+   "file_name": "00M52S_1678190452_15_jpg.rf.15ec3e4cfd3669ffc2a4b63dbd205663.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is this?",
+   "response": "Based on the image alone, it is not possible to determine the exact type of",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a194",
+   "model": "LLAVA-1.6-MISTRAL-7B",
+   "strategy": "constrained",
+   "file_name": "13M40S_1678086820_25_jpg.rf.c1909dbebf0e485e8df50eb9dcbf5864.jpg",
+   "task": "type",
+   "stratum": "type/extracted",
+   "question": "Is this a tshirt or sweatshirt? Reply with one word only.",
+   "response": "T shirt",
+   "parser_label": "tshirt",
+   "reading": {
+    "kind": "label",
+    "value": "tshirt"
+   }
+  },
+  {
+   "id": "a195",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "00M40S_1678089640_6_jpg.rf.211f504502b3f4d7b49ce655b562d9f1.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is on the table?",
+   "response": "dress",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "dress"
+   }
+  },
+  {
+   "id": "a196",
+   "model": "VILT-B32-FINETUNED-VQA",
+   "strategy": "label_only",
+   "file_name": "45M52S_1678171552_7_jpg.rf.cdb1e9b14bfc03b6df310550ece9fd5e.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "black, brown, nude, white or pink?",
+   "response": "neither",
+   "parser_label": null,
+   "reading": {
+    "kind": "none",
+    "value": null
+   }
+  },
+  {
+   "id": "a197",
+   "model": "INTERNVL2-8B",
+   "strategy": "descriptive",
+   "file_name": "15M40S_1678104940_36_jpg.rf.dd8c83a29e5732abc49e6854097981c4.jpg",
+   "task": "color",
+   "stratum": "color/extracted",
+   "question": "<image>\nA worker is performing wet-heat treatment on a garment on an industrial ironing table. The garment may be partially covered by the iron or the worker's hands. What is the color of the garment being ironed? Choose exactly one from: black, brown, nude, white, pink.",
+   "response": "The color of the garment being ironed is brown.",
+   "parser_label": "brown",
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a198",
+   "model": "INTERNVL2-8B",
+   "strategy": "question",
+   "file_name": "00M52S_1678186852_12_jpg.rf.403ea7477fea728bf0d4299ea3ee8124.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "<image>\nWhat color is the garment?",
+   "response": "The garment in the image appears to be a light brown or beige color.",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "brown"
+   }
+  },
+  {
+   "id": "a199",
+   "model": "BLIP-VQA-CAPFILT-LARGE",
+   "strategy": "question",
+   "file_name": "14M40S_1678083280_3_jpg.rf.81e346bd99d4f38f9bfaa96bcd4550e1.jpg",
+   "task": "type",
+   "stratum": "type/rejected",
+   "question": "What type of garment is on the table?",
+   "response": "shirt",
+   "parser_label": null,
+   "reading": {
+    "kind": "word",
+    "value": "shirt"
+   }
+  },
+  {
+   "id": "a200",
+   "model": "QWEN3-VL-8B",
+   "strategy": "question",
+   "file_name": "13M52S_1678180432_24_jpg.rf.37182a586ca9231093e9b0cbca0f2a04.jpg",
+   "task": "color",
+   "stratum": "color/rejected",
+   "question": "What color is the garment?",
+   "response": "Based on the image provided, the garment being handled by the person in the pink shirt is a **white** t-shirt.\n\nIt is laid out on a light",
+   "parser_label": null,
+   "reading": {
+    "kind": "label",
+    "value": "white"
+   }
+  }
+ ]
+}

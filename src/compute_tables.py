@@ -1,11 +1,12 @@
 """
 Regenerates the tables of the paper from the released predictions.
 
-    python -m src.compute_tables                # all tables
+    python -m src.compute_tables                # Tables 4-9, 11 and 13
     python -m src.compute_tables --table 6      # one table
     python -m src.compute_tables --n-boot 1000  # faster, wider intervals
 
-Table 7 needs opencv (pip install opencv-python-headless).
+Table 10 is computed from image features and is produced by src/clip_probe.py.
+Tables 1-3, 12 and 14 contain no measurements.
 """
 
 import argparse
@@ -17,8 +18,7 @@ from pathlib import Path
 import numpy as np
 
 from src.bootstrap import cluster_ci, half_width, paired_cluster_ci
-from src.loading import (fold_mask, load, load_segments, load_split, subset,
-                     to_pink, transfer_share)
+from src.loading import load, load_segments, load_split, to_pink, transfer_share
 
 MODELS = [
     ("VILT-B32-FINETUNED-VQA", "ViLT-B/32", "Early VQA models"),
@@ -46,6 +46,10 @@ PROMPT_SHORT = {"constrained": "constr.", "label_only": "label",
 
 CATALOG_MODELS = ["CLIP-VIT-L14", "LLAVA-1.6-MISTRAL-7B", "PALIGEMMA", "QWEN2.5-VL-7B", "QWEN3-VL-8B"]
 CATALOG_EXTRA = {"CLIP-VIT-L14": "label_only"}
+
+# Detectors reported in Table 4. YOLO-World-S is released as well: it provides
+# the predicted boxes of the spatial ablation (Tables 6 and 7).
+DETECTORS = [("yolo-world-L", "YOLO-World-L"), ("grounding-dino", "Grounding DINO")]
 
 
 def r3(x):
@@ -108,9 +112,9 @@ def table04(args, segments):
             cells.append(f'{row[value] or "—":>16}{row[rate] or "—":>7}')
         print(f'{row["display"]:<22}{row["strategy"]:<14}' + "".join(cells))
 
-    for path in sorted(pred_path(args.predictions, "detectors").glob("*_predictions.jsonl")):
-        d = detector_metrics(path)
-        print(f'{d["display"]:<22}{"class names":<14}{"—":>16}{"—":>7}{"—":>16}{"—":>7}'
+    for name, display in DETECTORS:
+        d = detector_metrics(pred_path(args.predictions, "detectors", f"{name}_predictions.jsonl"))
+        print(f'{display:<22}{"class names":<14}{"—":>16}{"—":>7}{"—":>16}{"—":>7}'
               f'{r3(d["iou_adj"]):>16}{d["r_det"]:>7.3f}')
 
     group = None
@@ -150,8 +154,7 @@ def detector_metrics(path):
             ious.append(inter / union if union else 0.0)
         else:
             ious.append(0.0)
-    name = path.stem.replace("_predictions", "")
-    return {"display": name, "iou_adj": float(np.mean(ious)), "r_det": valid / len(records)}
+    return {"iou_adj": float(np.mean(ious)), "r_det": valid / len(records)}
 
 
 # ── Table 5 ────────────────────────────────────────────────────────────────
@@ -331,10 +334,77 @@ def table08(args, segments):
 
 # ── Table 9 ────────────────────────────────────────────────────────────────
 
-def table09(args, segments=None):
+def align(a, b):
+    """Indices that put the frames of b in the order of a."""
+    index = {f: i for i, f in enumerate(b["file_name"])}
+    return np.array([index[f] for f in a["file_name"]])
+
+
+def procedure_gain(args, segments, split, draws=1000, sample=200):
+    """The three stages applied in order to the models of the spatial ablation.
+
+    Start: label-only responses read without normalization. +Norm.: the same
+    responses with normalization. +Prompt: the joint strategy. +Isol.: L3
+    isolation, applied with the probability that L3 beats L1 on `sample`
+    randomly drawn frames, estimated from `draws` draws; its effect is the L3
+    minus L1 difference of the ablation session. On the held-out fold the
+    frames for that decision come from the training and validation folds.
+    """
+    main = pred_path(args.predictions, "main_benchmark")
+    ablation = load_ablation(args, segments)
+    rng = np.random.default_rng(0)
+    out = {}
+    for task in ["type", "color"]:
+        key = f"correct_{task}"
+        for model in ABLATION_MODELS:
+            def run(strategy, normalize=True):
+                return load(main / f"{model}_{strategy}_predictions.jsonl",
+                            normalize=normalize, segments=segments)
+            start, norm, prompt = (run("label_only", False), run("label_only"),
+                                   run(ablation_strategy(model)))
+            l1 = ablation[(model, "L1")][key][align(prompt, ablation[(model, "L1")])]
+            l3 = ablation[(model, "L3")][key][align(prompt, ablation[(model, "L3")])]
+            seg = prompt["segment"]
+            fold = np.array([split[s] == "test" for s in seg])
+            for scope, frames, pool in [("full", np.ones(len(seg), bool), np.arange(len(seg))),
+                                        ("fold", fold, np.where(~fold)[0])]:
+                wins = [l3[i].mean() > l1[i].mean()
+                        for i in (rng.choice(pool, sample, replace=False) for _ in range(draws))]
+                p_isol = float(np.mean(wins))
+                procedure = prompt[key][frames] + p_isol * (l3[frames] - l1[frames])
+                lo, hi = paired_cluster_ci(procedure, start[key][frames], seg[frames], args.n_boot)
+                out[(task, model, scope)] = dict(
+                    stages=[start[key][frames].mean(), norm[key][frames].mean(),
+                            prompt[key][frames].mean(), procedure.mean()],
+                    gain=procedure.mean() - start[key][frames].mean(),
+                    half_width=half_width(lo, hi), p_isol=p_isol)
+    return out
+
+
+def table09(args, segments):
+    gain = procedure_gain(args, segments, load_split(Path(args.metadata) / "split.csv"))
+
+    rule("TABLE 9  Cumulative effect of the procedure (full evaluation set)", 120)
+    head = f'{"Start":>7}{"+Norm.":>8}{"+Prompt":>9}{"+Isol.":>8}{"Gain":>16}'
+    print(f'{"":<16}{"Type_adj":^48}{"":>8}{"Color_adj":^48}')
+    print(f'{"Model":<16}{head}{"":>8}{head}')
+    print("-" * 120)
+    for model in ABLATION_MODELS:
+        cells = []
+        for task in ["type", "color"]:
+            g = gain[(task, model, "full")]
+            stages = "".join(f"{r3(v):>{w}}" for v, w in zip(g["stages"], [7, 8, 9, 8]))
+            total = f'{g["gain"]:+.3f}±{g["half_width"]:.3f}'
+            cells.append(stages + f"{total:>16}")
+        print(f"{DISPLAY[model]:<16}" + cells[0] + f'{"":>8}' + cells[1])
+
+
+# ── Table 11 ───────────────────────────────────────────────────────────────
+
+def table11(args, segments=None):
     profile = json.load(open(Path(args.metadata) / "profiling.json", encoding="utf-8"))
 
-    rule("TABLE 9  Computational profiling", 74)
+    rule("TABLE 11  Computational profiling", 74)
     print(f'{"Model":<18}{"Prompt":<10}{"Params":>9}{"VRAM (GB)":>12}{"A100":>11}{"4070 S":>11}')
     print("-" * 74)
     for m in profile["single_task"]:
@@ -347,12 +417,12 @@ def table09(args, segments=None):
     print("† no bounding-box prediction (latency covers two tasks)")
 
 
-# ── Table 11 ───────────────────────────────────────────────────────────────
+# ── Table 13 ───────────────────────────────────────────────────────────────
 
-def table11(args, segments):
+def table13(args, segments):
     root = pred_path(args.predictions, "main_benchmark")
 
-    rule("TABLE 11  Effect of surface-form normalization (changes above 0.05)", 60)
+    rule("TABLE 13  Effect of surface-form normalization (changes above 0.05)", 60)
     print(f'{"Model":<18}{"Strategy":<22}{"Type":>10}{"Color":>10}')
     print("-" * 60)
 
@@ -375,7 +445,7 @@ def table11(args, segments):
 
 
 TABLES = {4: table04, 5: table05, 6: table06, 7: table07,
-          8: table08, 9: table09, 11: table11}
+          8: table08, 9: table09, 11: table11, 13: table13}
 
 
 def main():

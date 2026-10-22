@@ -1,5 +1,5 @@
-# YOLO-World, used both as a localization reference and to produce the
-# region-of-interest boxes of the spatial ablation.
+# YOLO-World (src/run_detectors.py), used both as a localization reference and to
+# produce the region-of-interest boxes of the spatial ablation (src/build_roi_sets.py).
 # Python 3.11.15
 #
 #   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu130

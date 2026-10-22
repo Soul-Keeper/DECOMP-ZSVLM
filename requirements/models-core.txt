@@ -1,4 +1,5 @@
-# ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL, and the Grounding DINO reference. 
+# ViLT, BLIP, CLIP, Florence-2, PaliGemma, Qwen2.5-VL and the Grounding DINO reference,
+# plus the analyses that need the images: the linear probe and the class colour statistics.
 # Python 3.11.15
 #
 #   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu130
@@ -21,3 +22,5 @@ protobuf==7.35.1
 einops==0.8.2
 numpy==2.4.4
 pillow==12.2.0
+opencv-python==5.0.0.93
+scikit-learn==1.9.1

@@ -1,1 +1,10 @@
 __pycache__/
+*.pyc
+data/
+data_roi/
+data_ext/
+fashion-dataset/
+outputs/
+outputs_*/
+check/
+parser_check_answers.json

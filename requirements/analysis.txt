@@ -1,4 +1,5 @@
-# Recomputing the tables from the released predictions. No models, no GPU.
+# Recomputing the tables and the figures of the text from the released
+# predictions (compute_tables, compute_text, parser_check). No models, no GPU.
 # Python 3.11
 
 numpy==2.4.4

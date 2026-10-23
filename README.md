@@ -26,7 +26,7 @@ python -m src.compute_tables             # Tables 4-9, 11 and 13
 python -m src.compute_tables --table 6
 python -m src.compute_tables --n-boot 1000   # faster, wider intervals
 python -m src.compute_text               # figures quoted in the text, by section
-python -m src.compute_text --section 7a  # one section: 3, 5b, 5d, 5e, 6, 7a, 7b, 7c, 8, a
+python -m src.compute_text --section 7a  # one section: 3, 4, 5b, 5d, 5e, 6, 7a, 7b, 7c, 8, a
 python -m src.parser_check score         # check of the parser against a human reading
 python -m src.parser_check sample        # redraws that sample from the predictions
 ```

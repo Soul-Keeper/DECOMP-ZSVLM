@@ -117,6 +117,15 @@ def section3(data):
     print(f"person detected: {pct(person.mean())} of {len(det)} frames")
     print(f"person region overlaps the annotated garment (IoU > 0.1): {pct(overlaps.mean())}")
 
+# ── Section IV-B ───────────────────────────────────────────────────────────
+
+def section4(data):
+    head("Section IV-B  Open-vocabulary detectors: garment boxes per frame and adjusted IoU")
+    for name in ["yolo-world-S", "yolo-world-M", "yolo-world-L", "yolo-world-X", "grounding-dino"]:
+        det = data.detector(name)
+        boxes = np.median([r["n_garment_boxes"] for r in det])
+        valid = np.mean([r["pred_bbox_xyxy"] is not None for r in det])
+        print(f"{name:<16}median {boxes:.0f} garment boxes   IoU_adj {np.mean([r['iou'] for r in det]):.3f}   r_D {valid:.3f}")
 
 # ── Section V-B ────────────────────────────────────────────────────────────
 
@@ -547,7 +556,7 @@ def appendix_a(data):
                 print(f"{DISPLAY[model]:<16}{strategy:<22}{key:<15}{delta:+.4f}")
 
 
-SECTIONS = {"3": section3, "5b": section5b, "5d": section5d, "5e": section5e, "6": section6,
+SECTIONS = {"3": section3, "4": section4, "5b": section5b, "5d": section5d, "5e": section5e, "6": section6,
             "7a": section7a, "7b": section7b, "7c": section7c, "8": section8, "a": appendix_a}
 
 

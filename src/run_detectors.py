@@ -1,6 +1,7 @@
 """
-Open-vocabulary detectors: the localization references of Table 4, the boxes of
-the spatial ablation (YOLO-World-S, level L3) and the person boxes used to
+Open-vocabulary detectors: he localization references of Table 4, 
+the variant comparison of Section IV-B, the boxes of the spatial 
+ablation (YOLO-World-S, level L3) and the person boxes used to
 measure the operator in the frame.
 
     python -m src.run_detectors --detector yolo-world-S   --data-dir ./data
@@ -38,7 +39,9 @@ CLASSES = ["t-shirt", "sweatshirt", "folded garment", "person"]
 PERSON = "person"
 DETECTORS = {
     "yolo-world-S": dict(kind="yolo", weights="yolov8s-worldv2.pt", conf=0.05),
+    "yolo-world-M": dict(kind="yolo", weights="yolov8m-worldv2.pt", conf=0.05),
     "yolo-world-L": dict(kind="yolo", weights="yolov8l-worldv2.pt", conf=0.05),
+    "yolo-world-X": dict(kind="yolo", weights="yolov8x-worldv2.pt", conf=0.05),
     "grounding-dino": dict(kind="gdino", weights="IDEA-Research/grounding-dino-base",
                            box_threshold=0.15, text_threshold=0.15),
 }
